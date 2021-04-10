@@ -16,9 +16,12 @@ class Budget():
         bal -= amount
         return bal 
 
-    def transfer(db, option1, amount1, option2):
-        db[option1] -= amount1
-        db[option2] += amount1
+    def transfer(db, option1, amount, option2):
+        value1 = db[option1]
+        valuue2 = db[option2]
+
+        db[option1] = int(value1) - amount
+        db[option2] = int(valuue2) + amount
         return db
     
     def balance(db):
